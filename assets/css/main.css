@@ -12,6 +12,17 @@ a.active {
     background-color: none !important;
 }
 
+.back-button{
+    background: none;
+    border: none;
+    color: #FFF;
+    z-index: 2;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    text-align: left;
+}
+
 .bg-tosca {
     background-color: #93edd2 !important;
 }
@@ -60,6 +71,10 @@ a.active {
 .text-detail-food{
     padding: 20px;
     top: 80px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .text-menu {
@@ -111,6 +126,7 @@ a.active {
 }
 
 @media (max-width: 450px) {
+    
     #btn-buy{
         display: none;
     }
@@ -150,6 +166,11 @@ a.active {
     }
     .text-menu-detail {
         font-size: 12px;
+    }
+    .text-detail-food{
+        text-align: left;
+        left: 0;
+        right: auto;
     }
 }
 
