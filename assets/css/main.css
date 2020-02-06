@@ -32,7 +32,12 @@ a.active {
 }
 
 .p-banner {
-    padding: 100px;
+    padding: 10px 80px;
+}
+
+.card-category{
+    width: 200px;
+    height: 100px;
 }
 
 .card-detail-info{
@@ -62,6 +67,10 @@ a.active {
 
 .mb-10 {
     margin-bottom: 150px;
+}
+
+.text-category{
+    display: inline !important;
 }
 
 .text-main {
@@ -166,6 +175,9 @@ a.active {
     }
     .text-menu-detail {
         font-size: 12px;
+    }
+    .text-category{
+        display: block !important;
     }
     .text-detail-food{
         text-align: left;
