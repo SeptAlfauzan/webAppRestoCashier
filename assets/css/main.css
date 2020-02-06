@@ -1,4 +1,4 @@
-#smartphone-btn-buy{
+#smartphone-btn-buy {
     display: none;
 }
 
@@ -12,7 +12,7 @@ a.active {
     background-color: none !important;
 }
 
-.back-button{
+.back-button {
     background: none;
     border: none;
     color: #FFF;
@@ -35,12 +35,12 @@ a.active {
     padding: 10px 80px;
 }
 
-.card-category{
+.card-category {
     width: 200px;
     height: 100px;
 }
 
-.card-detail-info{
+.card-detail-info {
     padding: 0;
     position: absolute !important;
     top: 60vh !important;
@@ -69,7 +69,7 @@ a.active {
     margin-bottom: 150px;
 }
 
-.text-category{
+.text-category {
     display: inline !important;
 }
 
@@ -77,7 +77,7 @@ a.active {
     color: #03fcb1 !important;
 }
 
-.text-detail-food{
+.text-detail-food {
     padding: 20px;
     top: 80px;
     text-align: center;
@@ -116,12 +116,12 @@ a.active {
     object-fit: cover;
 }
 
-.img-detail{
+.img-detail {
     height: 75vh !important;
     object-fit: cover;
 }
 
-.img-detail-overlay{
+.img-detail-overlay {
     content: '';
     background: rgb(255, 255, 255);
     background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 1) 100%);
@@ -134,12 +134,15 @@ a.active {
     color: #FFF;
 }
 
+.mb-mobile {
+    margin-bottom: auto;
+}
+
 @media (max-width: 450px) {
-    
-    #btn-buy{
+    #btn-buy {
         display: none;
     }
-    #smartphone-btn-buy{
+    #smartphone-btn-buy {
         display: block;
         position: fixed;
         bottom: 0;
@@ -159,6 +162,9 @@ a.active {
         height: 95px;
         object-fit: cover;
     }
+    .mb-mobile {
+        margin-bottom: 800px !important;
+    }
     .navigation-menu {
         position: fixed;
         bottom: 0 !important;
@@ -176,10 +182,10 @@ a.active {
     .text-menu-detail {
         font-size: 12px;
     }
-    .text-category{
+    .text-category {
         display: block !important;
     }
-    .text-detail-food{
+    .text-detail-food {
         text-align: left;
         left: 0;
         right: auto;
