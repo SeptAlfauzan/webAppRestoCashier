@@ -2,6 +2,10 @@
     display: none;
 }
 
+.activity-container {
+    min-height: 75vh !important;
+}
+
 .circle-button:hover {
     transition: 0.5s;
     transform: scale(1.2);
@@ -63,6 +67,11 @@ a.active {
 
 .circle-next-ic {
     line-height: 100px;
+}
+
+.icon {
+    width: 40px !important;
+    height: 40px !important;
 }
 
 .mb-10 {
@@ -142,10 +151,16 @@ a.active {
     #btn-buy {
         display: none;
     }
+    #search-bar-md {
+        display: none;
+    }
     #smartphone-btn-buy {
         display: block;
         position: fixed;
         bottom: 0;
+    }
+    .activity-container {
+        min-height: 100vh !important;
     }
     .circle-size {
         width: 50px;

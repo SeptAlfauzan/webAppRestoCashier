@@ -21,7 +21,22 @@
 
 <body class="p-0 m-0 bg-white">
     <nav>
-        <div class="nav mb-0 navigation-menu justify-content-center bg-white border-top" id="nav-tab" role="tablist">
+        <div class="nav mb-0 navigation-menu justify-content-center justify-content-md-end bg-white border-top container" id="nav-tab" role="tablist">
+
+            <div class="pt-4 mr-auto" id="search-bar-md">
+                <form class="form-inline">
+                    <!-- <a class="d-inline" href="#">
+                        <img src="assets/illustration/icon/food.svg" class="col-3 m-0 p-0" alt="" srcset="">
+                        <span class="font-weight-bold text-dark ml-0 fa-2x">EatNow</span>
+                    </a> -->
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="password" class="form-control badge-pill" id="inputPassword2" placeholder="Cari menu">
+                    </div>
+                    <button type="submit" class="btn btn-outline-secondary rounded-circle mb-2">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
             <a class="nav-link text-menu active" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
                 <i class="fas fa-home fa-2x ic-menu"></i>
                 <br>
@@ -50,6 +65,14 @@
         <div id="home" role="tabpanel" aria-labelledby="home-tab"
             class="tab-pane fade show active container mt-md-5 mt-0 mb-3 bg-white p-0 rounded">
             <div class="row col-12 p-banner mb-0 m-0 rounded">
+
+                <div class="alert alert-info alert-dismissible fade show col-12" role="alert">
+                    <strong>Pesanan anda sedang dibuat,</strong> harap tunggu sebentar ☺.
+                    <button type="button" class="close m-auto" data-dismiss="alert" aria-label="Close">
+                        <i class="far fa-times-circle fa-1x"></i>
+                    </button>
+                </div>
+
                 <div class="col-md-6 col-12 pl-md-5 pl-0 pt-3 pb-3">
                     <h1 class="font-weight-bold">Mau <span class="text-warning">makan</span> apa anda hari ini?</h1>
                 </div>
@@ -259,9 +282,47 @@
         </div>
     
         <div id="activity" role="tabpanel" aria-labelledby="activity-tab"
-            class="tab-pane fade container mt-md-5 mt-0 mb-10 bg-white pt-3 pb-4 rounded shadow-lg">
-            <h4>Activity</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero hic eius ipsa molestiae animi deleniti iste beatae voluptatem suscipit. Asperiores, repellat sapiente eius fuga delectus ipsam ipsa accusantium obcaecati error?</p>
+            class="tab-pane fade container mt-md-5 mt-0 bg-white pt-3 pb-4 rounded shadow-lg activity-container" id="">
+            <h4 class="ml-3">Activity</h4>
+            <a href="http://" class="nav-link col-12 p-0 m-1 justify-content-center">
+                <div class="alert alert-info row col-12 m-auto" role="alert">
+                    <img src="assets/illustration/icon/order.svg" class="icon p-0 m-0" alt="" srcset="">
+                    <div class="ml-3 p-0">
+                        <div class="font-weight-bold">Lorem....</div>
+                        <div class="d-block">
+                            <span>Meja 4</span>
+                            <span>Sudah diantar</span>
+                        </div>
+                    </div>
+                    <div class="ml-auto font-wight-light">30 jan</div>
+                </div>
+            </a>
+            <a href="http://" class="nav-link col-12 p-0 m-1 justify-content-center">
+                <div class="alert alert-info row col-12 m-auto" role="alert">
+                    <img src="assets/illustration/icon/order.svg" class="icon p-0 m-0" alt="" srcset="">
+                    <div class="ml-3 p-0">
+                        <div class="font-weight-bold">Lorem....</div>
+                        <div class="d-block">
+                            <span>Meja 4</span>
+                            <span>Sudah diantar</span>
+                        </div>
+                    </div>
+                    <div class="ml-auto font-wight-light">30 jan</div>
+                </div>
+            </a>
+            <a href="http://" class="nav-link col-12 p-0 m-1 justify-content-center">
+                <div class="alert alert-info row col-12 m-auto" role="alert">
+                    <img src="assets/illustration/icon/order.svg" class="icon p-0 m-0" alt="" srcset="">
+                    <div class="ml-3 p-0">
+                        <div class="font-weight-bold">Lorem....</div>
+                        <div class="d-block">
+                            <span>Meja 4</span>
+                            <span>Sudah diantar</span>
+                        </div>
+                    </div>
+                    <div class="ml-auto font-wight-light">30 jan</div>
+                </div>
+            </a>
         </div>
 
         <div id="payment" role="tabpanel" aria-labelledby="activity-tab"
