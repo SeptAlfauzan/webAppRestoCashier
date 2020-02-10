@@ -31,8 +31,29 @@ a.active {
     background-color: #93edd2 !important;
 }
 
+.bg-dark-purple{
+    background-color: #1c1d28 !important;
+}
+
 .bg-pink {
     background-color: #ffd4cc !important;
+}
+
+.bg-purple-pink{
+    background-color: #df6cce !important;
+}
+
+.bg-purple{
+    background-color: #27293d !important;
+}
+
+.btn-purple-pink{
+    background-color: #df6cce !important;
+}
+
+.btn-purple-pink:hover{
+    transition: 0.5s;
+    background-color: #b43fa2 !important;
 }
 
 .p-banner {
