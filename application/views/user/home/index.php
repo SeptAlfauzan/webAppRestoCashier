@@ -297,9 +297,23 @@
             </a>
             <div class="modal fade bd-example-modal-xl m-0 col-12 modal-activity" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
                 aria-hidden="true">
-                <div class="modal-dialog modal-xl" role="document">
-                    <div class="modal-content">
-                        ...
+                <div class="modal-dialog modal-xl justify-content-center" role="document">
+                    <div class="modal-content bg-light p-3 col-md-6 col-12 m-auto">
+                        <div class="col-12 rounded bg-white m-2 row">
+                            <img src="assets/illustration/icon/order.svg" class="icon p-0 m-0" alt="" srcset="">
+                            <h4 class="text-secondary">Nama pesanan</h4>
+                        </div>
+                        <div class="col-12 rounded bg-white m-2 row">
+                            <img src="assets/illustration/icon/desk.svg" alt="" class="icon p-0 m-0">
+                            <h4 class="text-secondary">Nomer meja</h4>
+                        </div>
+                        <div class="col-12 rounded bg-white m-2">
+                            <h3 class="text-secondary">Detail pesanan</h3>
+                            <span class="d-block">1x lorem</span>
+                            <span class="d-block">1x lorem</span>
+                            <span class="d-block">1x lorem</span>
+                            <h5 class="text-secondary">Total</h5>
+                        </div>
                     </div>
                 </div>
             </div>
