@@ -23,4 +23,24 @@ class AdminManager extends CI_Controller
     {
         $this->load->view('admin/dashboard/index');
     }
+
+    public function pegawai()
+    {
+        $this->load->view('admin/pegawai/index');
+    }
+
+    public function menu()
+    {
+        $this->load->view('admin/menu/index');
+    }
+
+    public function order()
+    {
+        $this->load->view('admin/order/index');
+    }
+
+    public function logout()
+    {
+        $this->load->view('user/home/index');
+    }
 }

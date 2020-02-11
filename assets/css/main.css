@@ -56,6 +56,13 @@ a.active {
     background-color: #b43fa2 !important;
 }
 
+.bg-transparent{
+    background-color: none !important;
+}
+
+.border-purple{
+    border-color: 1px solid #df6cce !important;
+}
 .p-banner {
     padding: 10px 80px;
 }
