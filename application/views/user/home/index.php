@@ -298,21 +298,41 @@
             <div class="modal fade bd-example-modal-xl m-0 col-12 modal-activity" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-xl justify-content-center" role="document">
-                    <div class="modal-content bg-light p-3 col-md-6 col-12 m-auto">
-                        <div class="col-12 rounded bg-white m-2 row">
+                    <div class="modal-content bg-light pt-4 pb-4 p-3 col-md-6 col-12 m-auto">
+                        <div class="row pl-4 pr-4">
+                            <span class="text-secondary">Id Pesanan</span>
+                            <span class="text-secondary ml-auto">HKSAHDDDD</span>
+                        </div>
+                        <div class="col-12 rounded bg-white mt-1 m-0 row p-2">
                             <img src="assets/illustration/icon/order.svg" class="icon p-0 m-0" alt="" srcset="">
                             <h4 class="text-secondary">Nama pesanan</h4>
                         </div>
-                        <div class="col-12 rounded bg-white m-2 row">
+                        <div class="col-12 rounded bg-white mt-1 m-0 row p-2">
                             <img src="assets/illustration/icon/desk.svg" alt="" class="icon p-0 m-0">
                             <h4 class="text-secondary">Nomer meja</h4>
                         </div>
-                        <div class="col-12 rounded bg-white m-2">
-                            <h3 class="text-secondary">Detail pesanan</h3>
-                            <span class="d-block">1x lorem</span>
-                            <span class="d-block">1x lorem</span>
-                            <span class="d-block">1x lorem</span>
-                            <h5 class="text-secondary">Total</h5>
+                        <div class="col-12 rounded bg-white mt-1 m-0 p-2">
+                            <h3 class="text-secondary">Rincian pesanan</h3>
+                            <div class="row col-12 m-auto">
+                                <span class="d-block text-secondary">1&times;</span>
+                                <span class="d-block text-secondary">Lorem, ipsum.</span>
+                                <span class="ml-auto text-secondary">1000</span>
+                            </div>
+                            <div class="row col-12 m-auto">
+                                <span class="d-block text-secondary">1&times;</span>
+                                <span class="d-block text-secondary">Lorem, ipsum.</span>
+                                <span class="ml-auto text-secondary">1000</span>
+                            </div>
+                            <div class="row col-12 m-auto">
+                                <span class="d-block text-secondary">1&times;</span>
+                                <span class="d-block text-secondary">Lorem, ipsum.</span>
+                                <span class="ml-auto text-secondary">1000</span>
+                            </div>
+                            <div class="row col-12 m-auto">
+                                <h5 class="text-secondary">Total</h5>
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span class="ml-auto text-secondary">Rp.1000</span>
+                            </div>
                         </div>
                     </div>
                 </div>

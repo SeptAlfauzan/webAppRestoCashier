@@ -14,7 +14,7 @@
 
 <body class="bg-dark-purple">
   <div class="container">
-    <div class="col-md-6 col-10 m-auto rounded bg-purple p-3">
+    <div class="col-md-6 col-10 m-auto rounded bg-purple p-3" style="top: 15vh">
       <h1 class="text-white text-center">Login</h1>
       <form>
         <div class="form-group">
