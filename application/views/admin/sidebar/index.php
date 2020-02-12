@@ -22,6 +22,12 @@
                 </a>
             </li>
             <li>
+                <a href="<?= base_url('AdminManager/user')?>">
+                    <i class="tim-icons icon-single-02"></i>
+                    <p>User</p>
+                </a>
+            </li>
+            <li>
                 <a href="<?= base_url('AdminManager/menu')?>">
                     <i class="tim-icons icon-paper"></i>
                     <p>Menu</p>

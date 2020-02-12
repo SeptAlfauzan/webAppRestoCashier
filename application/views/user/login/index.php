@@ -12,30 +12,31 @@
   <title>Login</title>
 </head>
 
-<body class="bg-dark-purple">
+<body class="">
   <div class="container">
-    <div class="col-md-6 col-10 m-auto rounded bg-purple p-3" style="top: 15vh">
-      <h1 class="text-white text-center">Login</h1>
+    <div class="col-md-6 col-10 m-auto rounded p-3 border border-secondary" style="top: 15vh">
+      <h1 class="text-dark text-center">Login</h1>
       <form>
         <div class="form-group">
-          <label for="staticEmail" class="text-white col-sm-2 col-form-label d-block">Email</label>
+          <label for="staticEmail" class="text-dark col-sm-2 col-form-label d-block">Email</label>
           <div class="col-sm-12 d-block">
-            <input type="text" class="badge-pill m-auto form-control bg-transparent border-purple" id="staticEmail" value="email@example.com">
+            <input type="text" class="badge-pill m-auto form-control bg-transparent border border-dark" id="staticEmail" value="email@example.com">
           </div>
         </div>
         <div class="form-group">
-          <label for="inputPassword" class="text-white col-sm-2 col-form-label d-block">Password</label>
+          <label for="inputPassword" class="text-dark col-sm-2 col-form-label d-block">Password</label>
           <div class="col-sm-12 d-block">
-            <input type="password" class="badge-pill m-auto form-control bg-transparent border-purple" id="inputPassword" placeholder="Password">
+            <input type="password" class="badge-pill m-auto form-control bg-transparent border border-dark" id="inputPassword" placeholder="Password">
           </div>
         </div>
         <div class="col-12 row m-auto">
           <div class="col-md-6 col-12 p-1">
-            <button type="submit" class="btn btn-secondary col-12">batal</button>
+            <button type="submit" class="btn btn-outline-secondary col-12">batal</button>
           </div>
           <div class="col-md-6 col-12 p-1">
-            <button type="submit" class="btn btn-purple-pink col-12">login</button>
+            <button type="submit" class="btn btn-info col-12">login</button>
           </div>
+          <a href="<?= base_url('LoginAuth/register_user')?>" class="nav-link">Belum punya akun?</a>
         </div>
       </form>
     </div>

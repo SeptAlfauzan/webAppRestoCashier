@@ -19,7 +19,7 @@
     <title>zawarudo</title>
 </head>
 
-<body class="p-0 m-0 bg-white">
+<body class="p-0 m-0 bg-">
     <nav>
         <div class="nav mb-0 navigation-menu justify-content-center justify-content-md-end bg-white border-top container" id="nav-tab" role="tablist">
 
@@ -330,8 +330,7 @@
                             </div>
                             <div class="row col-12 m-auto">
                                 <h5 class="text-secondary">Total</h5>
-                                <i class="fas fa-money-bill-wave"></i>
-                                <span class="ml-auto text-secondary">Rp.1000</span>
+                                <span class="ml-auto text-secondary"><i class="fas fa-money-bill-wave text-secondary mr-1"></i>Rp.1000</span>
                             </div>
                         </div>
                     </div>

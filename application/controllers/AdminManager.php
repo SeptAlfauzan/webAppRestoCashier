@@ -20,6 +20,11 @@ class AdminManager extends CI_Controller
         $this->load->view('admin/pegawai/index', $data);
     }
 
+    public function user()
+    {
+        $this->load->view('admin/user/index');
+    }
+
     public function menu()
     {
         $this->load->view('admin/menu/index');

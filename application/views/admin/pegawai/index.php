@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="<?= base_url() ?>assets_template_admin/Datatables/boostrap.css">
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="<?= base_url() ?>assets_template_admin/demo/demo.css" rel="stylesheet" />
+  <link rel="stylesheet" href="<?= base_url()?>/assets/css/main.css">
 </head>
 
 <body class="">
@@ -38,61 +39,51 @@
               <div class="card-header ">
                 <h1>Data Pegawai</h1>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                  Tambah User
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content card">
-                      <div class="modal-header">
-                        <h3 class="modal-title text-light" id="exampleModalLabel">Form tambah user</h3>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
+                <p>
+                  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Tambah User
+                  </a>
+                </p>
+                <div class="collapse bg-light-purple p-3" id="collapseExample">
+                  <div class="bg-light-purple">
+                    <form>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Email address</label>
+                        <input type="email" class="form-control border border-primary" id="exampleFormControlInput1" placeholder="name@example.com">
                       </div>
-                      <div class="modal-body">
-                        <form>
-                          <div class="form-group">
-                            <label for="exampleFormControlInput1">Email address</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleFormControlSelect1">Example select</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
-                            </select>
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleFormControlSelect2">Example multiple select</label>
-                            <select multiple class="form-control" id="exampleFormControlSelect2">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
-                            </select>
-                          </div>
-                          <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Example textarea</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                          </div>
-                          <div class="col-12 row m-0">
-                            <div class="col-md-6 col-12 p-1">
-                              <button type="button" class="btn btn-secondary col-12 m-0" data-dismiss="modal">Close</button>
-                            </div>  
-                            <div class="col-md-6 col-12 p-1">
-                              <button type="submit" class="btn btn-primary col-12 m-0">Save changes</button>
-                            </div>
-                          </div>
-                        </form>
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect1">Example select</label>
+                        <select class="form-control border border-primary bg-light-purple" id="exampleFormControlSelect1">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
                       </div>
-                    </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect2">Example multiple select</label>
+                        <select multiple class="form-control border border-primary" id="exampleFormControlSelect2">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Example textarea</label>
+                        <textarea class="form-control border border-primary" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                      <div class="col-12 col-md-6 ml-auto row m-0">
+                        <div class="col-md-6 col-12 p-1">
+                          <button type="button" class="btn btn-outline-primary col-12 m-0" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Close</button>
+                        </div>
+                        <div class="col-md-6 col-12 p-1">
+                          <button type="submit" class="btn btn-primary col-12 m-0">Save changes</button>
+                        </div>
+                      </div>
+                    </form>
                   </div>
                 </div>
               </div>

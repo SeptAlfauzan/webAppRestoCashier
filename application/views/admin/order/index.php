@@ -55,14 +55,26 @@
                       <td>USERNAME</td>
                       <td>NAMA USER</td>
                       <td>
-                      <select class="custom-select text-primary bg-dark border border-0" id="inputGroupSelect01">
-                        <option class="border border-0" selected>Choose...</option>
-                        <option class="border border-0" value="1">Dibuat</option>
-                        <option class="border border-0" value="2">Diantar</option>
-                        <option class="border border-0" value="3">Sampai</option>
-                      </select>
+                        <select class="custom-select text-primary bg-dark border border-0" id="status">
+                          <option class="border border-0" selected>Choose...</option>
+                          <option class="border border-0" value="1">Dibuat</option>
+                          <option class="border border-0" value="2">Diantar</option>
+                          <option class="border border-0" value="3">Sampai</option>
+                        </select>
                       </td>
-                      <td>STATUS</td>
+                      <td>
+                        STATUS
+                      </td>
+                      <td>
+                      <div class="row">
+                          <button class="action-btn btn btn-secondary d-none col">
+                              &times;
+                          </button>
+                          <button class="action-btn btn btn-primary d-none col">
+                              &check;
+                          </button>
+                        </div>
+                      </td>
                     </tr>
                     <tr>
                       <td>ID USER</td>
@@ -114,6 +126,11 @@
   <script>
     $(document).ready(function() {
       $('#data-tables').DataTable();
+    });
+  </script>
+  <script>
+    $("select#status").change(function() {
+      $("button.action-btn").removeClass("d-none");
     });
   </script>
 </body>
