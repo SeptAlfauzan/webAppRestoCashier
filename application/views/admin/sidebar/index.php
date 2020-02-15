@@ -9,7 +9,7 @@
             </a>
         </div>
         <ul class="nav">
-            <li class="active">
+            <li class="<?php if($this->session->has_userdata('user_page')){ echo "active";}?>">
                 <a href="<?= base_url('AdminManager')?>">
                     <i class="tim-icons icon-chart-pie-36"></i>
                     <p>Dashboard</p>
@@ -21,7 +21,7 @@
                     <p>Pegawai</p>
                 </a>
             </li>
-            <li>
+            <li class="<?php if($this->session->has_userdata('user_page')){ echo "active";}?>">
                 <a href="<?= base_url('AdminManager/user')?>">
                     <i class="tim-icons icon-single-02"></i>
                     <p>User</p>
