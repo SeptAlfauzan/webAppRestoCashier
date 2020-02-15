@@ -41,48 +41,47 @@
                                 <!-- Button trigger modal -->
                                 <p>
                                     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                        Tambah Menu
+                                        Tambah menu
                                     </a>
                                 </p>
                                 <div class="collapse bg-light-purple p-3" id="collapseExample">
                                     <div class="bg-light-purple">
-                                        <form>
-                                            <div class="form-group">
-                                                <label for="exampleFormControlInput1">Email address</label>
-                                                <input type="email" class="form-control border border-primary" id="exampleFormControlInput1" placeholder="name@example.com">
+                                        <?= form_open_multipart('AdminManager/upload_menu') ?>
+                                        <div class="custom-file form-group">
+                                            <input name="image" type="file" class="custom-file-input" id="validatedCustomFile" required>
+                                            <label class="custom-file-label" for="validatedCustomFile">Pilih foto masakan/minuman</label>
+                                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">Nama masakan</label>
+                                            <input name="nama_masakan" type="text" class="form-control border border-primary" id="exampleFormControlInput1" placeholder="masukkan nama masakan">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">Harga(Rupiah)</label>
+                                            <input name="harga_masakan" type="number" min="0" class="form-control border border-primary" id="exampleFormControlInput1" placeholder="cth: 5000">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlSelect1">Kategori</label>
+                                            <select name="id_kategori_masakan" class="form-control border border-primary bg-light-purple" id="exampleFormControlSelect1">
+                                                <option value="1">masakan</option>
+                                                <option value="2">minuman</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlSelect2">Status masakan</label>
+                                            <select name="status_masakan" multiple class="form-control border border-primary" id="exampleFormControlSelect2">
+                                                <option value="1">tersedia</option>
+                                                <option value="0">tidak tersedia</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 col-md-6 ml-auto row m-0">
+                                            <div class="col-md-6 col-12 p-1">
+                                                <button type="button" class="btn btn-outline-primary col-12 m-0" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Close</button>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="exampleFormControlSelect1">Example select</label>
-                                                <select class="form-control border border-primary bg-light-purple" id="exampleFormControlSelect1">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
-                                                </select>
+                                            <div class="col-md-6 col-12 p-1">
+                                                <button type="submit" class="btn btn-primary col-12 m-0">Save changes</button>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="exampleFormControlSelect2">Example multiple select</label>
-                                                <select multiple class="form-control border border-primary" id="exampleFormControlSelect2">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="exampleFormControlTextarea1">Example textarea</label>
-                                                <textarea class="form-control border border-primary" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                            </div>
-                                            <div class="col-12 col-md-6 ml-auto row m-0">
-                                                <div class="col-md-6 col-12 p-1">
-                                                    <button type="button" class="btn btn-outline-primary col-12 m-0" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Close</button>
-                                                </div>
-                                                <div class="col-md-6 col-12 p-1">
-                                                    <button type="submit" class="btn btn-primary col-12 m-0">Save changes</button>
-                                                </div>
-                                            </div>
+                                        </div>
                                         </form>
                                     </div>
                                 </div>
@@ -95,23 +94,74 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="d-inline-block col-4 border-0">
-                                            <td>
-                                                <div class="card" style="width: 18rem;">
-                                                    <img class="card-img-top" src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="Card image cap">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">Card title</h5>
-                                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                                        <a href="#" class="btn btn-primary">
-                                                            <i class="tim-icons icon-pencil"></i>
-                                                        </a>
-                                                        <a href="#" class="btn btn-danger">
-                                                            <i class="tim-icons icon-trash-simple"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        <?php foreach ($menus as $menu) { ?>
+                                            <tr class="d-inline-block col-4 border-0">
+                                                <td>
+                                                    <div class="card" style="width: 18rem;">
+                                                        <img class="card-img-top" src="<?= base_url() ?>images/<?= $menu['foto_masakan'] ?>" alt="Card image cap">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title"><?= $menu['nama_masakan'] ?></h5>
+                                                            <p class="card-text"><span class="text-secondary">Harga</span> Rp<?= $menu['harga'] ?></p>
+                                                            <p class="card-text"><span class="text-secondary">Status </span><?= $menu['status_masakan'] ?></p>
+                                                            <a href="<?= base_url('AdminManager/edit_menu')?>?id_masakan=<?= $menu['id_masakan']?>" class="btn btn-primary">
+                                                                <i class="tim-icons icon-pencil"></i>
+                                                            </a>
+                                                            <a href="<?= base_url('AdminManager/delete_menu') ?>?id_masakan=<?= $menu['id_masakan'] ?>" class="btn btn-danger">
+                                                                <i class="tim-icons icon-trash-simple"></i>
+                                                            </a>
+
+                                                            <!-- Modal -->
+                                                            <div class="modal fade" id="editmenu<?= $menu['id_masakan']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                                    <div class="modal-content" style="background: #27293d">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <?= form_open_multipart('AdminManager/upload_menu') ?>
+                                                                            <img class="img-menu" src="<?= base_url() ?>images/<?= $menu['foto_masakan'] ?>" alt="Card image cap" id="img_edit_<?= $menu['id_masakan']?>">
+                                                                            <div class="custom-file form-group">
+                                                                                <input name="image" type="file" class="custom-file-input" id="validatedCustomFile" required>
+                                                                                <label class="custom-file-label" for="validatedCustomFile">Pilih foto masakan/minuman</label>
+                                                                                <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlInput1">Nama masakan</label>
+                                                                                <input name="nama_masakan" value="<?= $menu['nama_masakan']?>" type="text" class="form-control border border-primary" id="exampleFormControlInput1" placeholder="masukkan nama masakan">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlInput1">Harga(Rupiah)</label>
+                                                                                <input name="harga_masakan" value="<?= $menu['harga']?>" type="number" min="0" class="form-control border border-primary" id="exampleFormControlInput1" placeholder="cth: 5000">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect1">Kategori</label>
+                                                                                <select name="id_kategori_masakan" class="form-control border border-primary bg-light-purple" id="exampleFormControlSelect1">
+                                                                                    <option value="1">masakan</option>
+                                                                                    <option value="2">minuman</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="exampleFormControlSelect2">Status masakan</label>
+                                                                                <select name="status_masakan" multiple class="form-control border border-primary" id="exampleFormControlSelect2">
+                                                                                    <option value="1">tersedia</option>
+                                                                                    <option value="0">tidak tersedia</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            </form>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
                                         <tr class="d-inline-block col-4 border-0">
                                             <td>
                                                 <div class="card" style="width: 18rem;">
@@ -172,57 +222,62 @@
                                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                                         <!-- Button trigger modal -->
                                                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                                                        <i class="tim-icons icon-pencil"></i>
+                                                            <i class="tim-icons icon-pencil"></i>
                                                         </button>
 
                                                         <!-- Modal -->
                                                         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                                            <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <form class="text-dark">
-                                                                    <div class="form-group">
-                                                                        <label class="text-dark" for="exampleFormControlInput1">Email address</label>
-                                                                        <input type="email" class="form-control text-dark" id="exampleFormControlInput1" placeholder="name@example.com">
+                                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
                                                                     </div>
-                                                                    <div class="form-group">
-                                                                        <label class="text-dark" for="exampleFormControlSelect1">Example select</label>
-                                                                        <select class="form-control text-dark" id="exampleFormControlSelect1">
-                                                                        <option>1</option>
-                                                                        <option>2</option>
-                                                                        <option>3</option>
-                                                                        <option>4</option>
-                                                                        <option>5</option>
-                                                                        </select>
+                                                                    <div class="modal-body">
+                                                                        <form class="text-dark">
+                                                                            <div class="custom-file">
+                                                                                <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                                                                                <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                                                                                <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label class="text-dark" for="exampleFormControlInput1">Email address</label>
+                                                                                <input type="email" class="form-control text-dark" id="exampleFormControlInput1" placeholder="name@example.com">
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label class="text-dark" for="exampleFormControlSelect1">Example select</label>
+                                                                                <select class="form-control text-dark" id="exampleFormControlSelect1">
+                                                                                    <option>1</option>
+                                                                                    <option>2</option>
+                                                                                    <option>3</option>
+                                                                                    <option>4</option>
+                                                                                    <option>5</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label class="text-dark" for="exampleFormControlSelect2">Example multiple select</label>
+                                                                                <select multiple class="form-control text-dark" id="exampleFormControlSelect2">
+                                                                                    <option>1</option>
+                                                                                    <option>2</option>
+                                                                                    <option>3</option>
+                                                                                    <option>4</option>
+                                                                                    <option>5</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label class="text-dark" for="exampleFormControlTextarea1">Example textarea</label>
+                                                                                <textarea class="form-control text-dark" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                                                            </div>
+                                                                        </form>
                                                                     </div>
-                                                                    <div class="form-group">
-                                                                        <label class="text-dark" for="exampleFormControlSelect2">Example multiple select</label>
-                                                                        <select multiple class="form-control text-dark" id="exampleFormControlSelect2">
-                                                                        <option>1</option>
-                                                                        <option>2</option>
-                                                                        <option>3</option>
-                                                                        <option>4</option>
-                                                                        <option>5</option>
-                                                                        </select>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                        <button type="button" class="btn btn-primary">Save changes</button>
                                                                     </div>
-                                                                    <div class="form-group">
-                                                                        <label class="text-dark" for="exampleFormControlTextarea1">Example textarea</label>
-                                                                        <textarea class="form-control text-dark" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                                                    </div>
-                                                                    </form>
+                                                                </div>
                                                             </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                <button type="button" class="btn btn-primary">Save changes</button>
-                                                            </div>
-                                                            </div>
-                                                        </div>
                                                         </div>
                                                         <a href="#" class="btn btn-danger">
                                                             <i class="tim-icons icon-trash-simple"></i>

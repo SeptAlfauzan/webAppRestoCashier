@@ -181,6 +181,7 @@ a.active {
 .modal-activity{
     min-height: 100vh !important;
 }
+
 @media (max-width: 450px) {
     #btn-buy {
         display: none;
