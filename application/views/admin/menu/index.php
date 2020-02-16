@@ -48,8 +48,8 @@
                                     <div class="bg-light-purple">
                                         <?= form_open_multipart('AdminManager/upload_menu') ?>
                                         <div class="custom-file form-group">
-                                            <input name="image" type="file" class="custom-file-input" id="validatedCustomFile" required>
-                                            <label class="custom-file-label" for="validatedCustomFile">Pilih foto masakan/minuman</label>
+                                            <input name="image" type="file" class="custom-file-input" id="inputImage" required>
+                                            <label class="custom-file-label" for="validatedCustomFile"> <span id="imageLabel" >Pilih foto masakan/minuman</span></label>
                                             <div class="invalid-feedback">Example invalid custom file feedback</div>
                                         </div>
                                         <div class="form-group">
@@ -102,63 +102,16 @@
                                                         <div class="card-body">
                                                             <h5 class="card-title"><?= $menu['nama_masakan'] ?></h5>
                                                             <p class="card-text"><span class="text-secondary">Harga</span> Rp<?= $menu['harga'] ?></p>
+                                                            <p class="card-text"><span class="text-secondary">Kategori </span><?= $menu['kategori'] ?></p>
                                                             <p class="card-text"><span class="text-secondary">Status </span><?= $menu['status_masakan'] ?></p>
-                                                            <a href="<?= base_url('AdminManager/edit_menu')?>?id_masakan=<?= $menu['id_masakan']?>" class="btn btn-primary">
+                                                            <a href="<?= base_url('AdminManager/edit_menu') ?>?id_masakan=<?= $menu['id_masakan'] ?>" class="btn btn-primary">
                                                                 <i class="tim-icons icon-pencil"></i>
                                                             </a>
                                                             <a href="<?= base_url('AdminManager/delete_menu') ?>?id_masakan=<?= $menu['id_masakan'] ?>" class="btn btn-danger">
                                                                 <i class="tim-icons icon-trash-simple"></i>
                                                             </a>
-
-                                                            <!-- Modal -->
-                                                            <div class="modal fade" id="editmenu<?= $menu['id_masakan']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                                                    <div class="modal-content" style="background: #27293d">
-                                                                        <div class="modal-header">
-                                                                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                                <span aria-hidden="true">&times;</span>
-                                                                            </button>
-                                                                        </div>
-                                                                        <div class="modal-body">
-                                                                            <?= form_open_multipart('AdminManager/upload_menu') ?>
-                                                                            <img class="img-menu" src="<?= base_url() ?>images/<?= $menu['foto_masakan'] ?>" alt="Card image cap" id="img_edit_<?= $menu['id_masakan']?>">
-                                                                            <div class="custom-file form-group">
-                                                                                <input name="image" type="file" class="custom-file-input" id="validatedCustomFile" required>
-                                                                                <label class="custom-file-label" for="validatedCustomFile">Pilih foto masakan/minuman</label>
-                                                                                <div class="invalid-feedback">Example invalid custom file feedback</div>
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <label for="exampleFormControlInput1">Nama masakan</label>
-                                                                                <input name="nama_masakan" value="<?= $menu['nama_masakan']?>" type="text" class="form-control border border-primary" id="exampleFormControlInput1" placeholder="masukkan nama masakan">
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <label for="exampleFormControlInput1">Harga(Rupiah)</label>
-                                                                                <input name="harga_masakan" value="<?= $menu['harga']?>" type="number" min="0" class="form-control border border-primary" id="exampleFormControlInput1" placeholder="cth: 5000">
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <label for="exampleFormControlSelect1">Kategori</label>
-                                                                                <select name="id_kategori_masakan" class="form-control border border-primary bg-light-purple" id="exampleFormControlSelect1">
-                                                                                    <option value="1">masakan</option>
-                                                                                    <option value="2">minuman</option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <label for="exampleFormControlSelect2">Status masakan</label>
-                                                                                <select name="status_masakan" multiple class="form-control border border-primary" id="exampleFormControlSelect2">
-                                                                                    <option value="1">tersedia</option>
-                                                                                    <option value="0">tidak tersedia</option>
-                                                                                </select>
-                                                                            </div>
-                                                                            </form>
-                                                                        </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -367,6 +320,14 @@
         $(document).ready(function() {
             $('#data-tables').DataTable();
         });
+    </script>
+    <script>
+        var imageLabel = $('#imageLabel');
+        $('#inputImage').change(function(){
+            var inputval = $('#inputImage').val();
+            var length = inputval.length;
+            imageLabel.html(inputval);
+        })
     </script>
 </body>
 

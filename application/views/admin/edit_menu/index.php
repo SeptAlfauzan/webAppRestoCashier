@@ -21,6 +21,12 @@
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="<?= base_url() ?>assets_template_admin/demo/demo.css" rel="stylesheet" />
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/main.css">
+    <style>
+        form{
+            width: 100%;
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body class="">
@@ -32,14 +38,13 @@
             <!-- End Navbar -->
             <div class="content">
                 <div class="row col-md-6 col-12 rounded mt-4 m-auto border border-danger">
-                    <div class="modal-body">
                         <?php foreach ($menus as $menu) { ?>
 
                             <?= form_open_multipart('AdminManager/do_edit_menu?id='.$menu["id_masakan"]) ?>
-                            <img class="img-menu" src="<?= base_url() ?>images/<?= $menu['foto_masakan'] ?>" alt="Card image cap" id="img_edit_<?= $menu['id_masakan'] ?>">
+                            <img class="img-menu" src="<?= base_url() ?>images/<?= $menu['foto_masakan'] ?>" alt="Card image cap" id="img_edit">
                             <div class="custom-file form-group">
-                                <input name="image" value="<?= ?>" type="file" class="custom-file-input" id="validatedCustomFile" >
-                                <label class="custom-file-label" for="validatedCustomFile">Pilih foto masakan/minuman</label>
+                                <input name="image" value="" type="file" class="custom-file-input" id="inputImage" >
+                                <label class="custom-file-label" for="validatedCustomFile"> <span id="imageLabel" >Pilih foto masakan/minuman</span></label>
                                 <div class="invalid-feedback">Example invalid custom file feedback</div>
                             </div>
                             <div class="form-group">
@@ -65,18 +70,17 @@
                                 </select>
                             </div>
                             <div class="row col-12 p-0 m-0">
-                                <a href="<?= base_url('AdminManager/menu') ?>" class="col-md-6 col-12">
-                                    <button class="btn btn-secondary col-12">
+                                <a href="<?= base_url('AdminManager/menu') ?>" class=" col-12 p-0">
+                                    <button class="btn btn-secondary col-12 m-0">
                                         kembali
                                     </button>
                                 </a>
-                                <button type="submit" class="btn btn-primary col-md-6 col-12">
+                                <button type="submit" class="btn btn-primary  col-12">
                                     simpan
                                 </button>
                             </div>
                             </form>
                         <?php } ?>
-                    </div>
                 </div>
             </div>
         </div>
@@ -96,6 +100,15 @@
     <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="<?= base_url() ?>assets_template_admin/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
     <script src="<?= base_url() ?>assets_template_admin/demo/demo.js"></script>
+
+    <script>
+        var imageLabel = $('#imageLabel');
+        $('#inputImage').change(function(){
+            var inputval = $('#inputImage').val();
+            var length = inputval.length;
+            imageLabel.html(inputval);
+        })
+    </script>
 </body>
 
 </html>

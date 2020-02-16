@@ -31,7 +31,7 @@ class AdminManager extends CI_Controller
     public function menu()
     {
         $this->session->userdata('menu_page');
-        $data['menus'] = $this->Admin_m->getData('masakan');
+        $data['menus'] = $this->Admin_m->getDataJoin('masakan', 'kategori_menu', 'masakan.id_kategori', 'kategori_menu.id_kategori');
         $this->load->view('admin/menu/index', $data);
         // $this->session->unset_userdata('menu_page');
     }
@@ -46,6 +46,11 @@ class AdminManager extends CI_Controller
     public function logout()
     {
         $this->load->view('user/home/index');
+    }
+
+    public function report()
+    {
+        $this->load->view('admin/report/index');
     }
 
     // action controller
@@ -137,11 +142,7 @@ class AdminManager extends CI_Controller
         $idKategori = $_POST['id_kategori_masakan'];
 
         $img = $_FILES['image']['name'];
-        if(! $img == ''){
-            $this->delete_image('masakan', 'id_masakan', $id);
-            $foto = $this->upload_image('./images/', $id, 'admin/menu/index');
-            $data['foto_masakan'] = $foto;
-        }
+        
 
         if ($statusMasakan == 1) {
             $statusMasakan = true;
@@ -149,15 +150,29 @@ class AdminManager extends CI_Controller
             $statusMasakan = false;
         }
 
-        $data = array(
-            'nama_masakan' => $namaMasakan,
-            'harga' => $harga,
-            'status_masakan' => $statusMasakan,
-            'id_kategori' => $idKategori
-        );
 
-        $this->Admin_m->update('masakan', 'id_masakan', $id, $data);
-        redirect('AdminManager/menu');
+        if(! $img == ''){
+            $this->delete_image('masakan', 'id_masakan', $id);
+            $foto = $this->upload_image('./images/', $id, 'admin/menu/index');
+            $data = array(
+                'foto_masakan' => $foto,
+                'nama_masakan' => $namaMasakan,
+                'harga' => $harga,
+                'status_masakan' => $statusMasakan,
+                'id_kategori' => $idKategori
+            );
+            $this->Admin_m->update('masakan', 'id_masakan', $id, $data);
+            redirect('AdminManager/menu');
+        }else{
+            $data = array(
+                'nama_masakan' => $namaMasakan,
+                'harga' => $harga,
+                'status_masakan' => $statusMasakan,
+                'id_kategori' => $idKategori
+            );
+            $this->Admin_m->update('masakan', 'id_masakan', $id, $data);
+            redirect('AdminManager/menu');
+        }
     }
 
     public function delete_image($table, $id_column, $id)

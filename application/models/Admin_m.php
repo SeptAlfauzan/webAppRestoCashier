@@ -32,4 +32,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
             $this->db->where($id_column, $id);
             $this->db->update($table, $data);
         }
+
+        public function getDataJoin($stTable, $ndTable, $stColumn, $ndColumn)
+        {
+            $this->db->select('*');
+            $this->db->from($stTable);
+            $this->db->join($ndTable, $stColumn.' = '.$ndColumn );
+            $query = $this->db->get();
+            return $query->result_array();
+        }
     }
